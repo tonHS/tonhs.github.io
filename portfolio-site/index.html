@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kate Skipton — Privacy & AI Advisor. AI-assisted compliance tools, Privacy Impact Assessments, and regulatory analysis for Canadian organizations.">
+  <title>Kate Skipton — Privacy & AI Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    /* === NAV === */
+    nav {
+      background: #0c1829;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .brand {
+      color: #f1f5f9;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    nav ul { display: flex; gap: 0.15rem; list-style: none; }
+    nav ul a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    nav ul a:hover { color: #f1f5f9; background: rgba(255,255,255,0.06); }
+
+    /* === HERO === */
+    #hero {
+      background: linear-gradient(160deg, #0c1829 0%, #0f2d6b 100%);
+      color: white;
+      padding: 6rem 2rem 5.5rem;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    #hero .eyebrow { color: #60a5fa; }
+    #hero h1 {
+      font-size: 2.9rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.4rem;
+    }
+    .hero-role {
+      font-size: 1.2rem;
+      color: #93c5fd;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero-credentials {
+      font-size: 0.83rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-credentials span {
+      padding: 0 0.75rem;
+    }
+    .hero-credentials span + span {
+      border-left: 1px solid #1e3a5f;
+    }
+    .hero-bio {
+      max-width: 600px;
+      margin: 0 auto 2.75rem;
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.35rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-ghost { border: 1.5px solid #1e3a5f; color: #cbd5e1; }
+    .btn-ghost:hover { border-color: #4b6cb7; color: white; }
+
+    /* === SECTIONS === */
+    .section { padding: 5.5rem 2rem; }
+    .section-alt { background: #f8fafc; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header { margin-bottom: 3rem; }
+    .section-header .eyebrow { color: #2563eb; }
+    .section-header h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .section-header p { color: #475569; font-size: 0.95rem; }
+
+    /* === TOOL CARDS === */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .tool-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .tool-screenshot {
+      width: 100%;
+      height: 195px;
+      overflow: hidden;
+      position: relative;
+      background: #1a2744;
+    }
+    .tool-screenshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .screenshot-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      height: 100%;
+      background: linear-gradient(135deg, #0c1829 0%, #1a2f5a 100%);
+      color: #475569;
+      font-size: 0.8rem;
+    }
+    .placeholder-ui {
+      width: 180px;
+      height: 110px;
+      border: 1px solid #1e3a5f;
+      border-radius: 8px;
+      background: #0f2041;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .placeholder-bar {
+      height: 8px;
+      border-radius: 3px;
+      background: #1e3a5f;
+    }
+    .placeholder-bar.accent { background: #2563eb; width: 60%; }
+    .placeholder-bar.short { width: 75%; }
+    .placeholder-chat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      justify-content: flex-end;
+    }
+    .placeholder-bubble {
+      height: 12px;
+      border-radius: 6px;
+      background: #1e3a5f;
+    }
+    .placeholder-bubble.user {
+      background: #1d4ed8;
+      width: 55%;
+      align-self: flex-end;
+    }
+    .placeholder-bubble.assistant {
+      background: #1e3a5f;
+      width: 80%;
+    }
+    .placeholder-label {
+      color: #475569;
+      font-size: 0.72rem;
+      text-align: center;
+      font-style: italic;
+    }
+    .tool-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .tool-body h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.55rem; }
+    .tool-body p {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 1rem; }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 500;
+    }
+    .tag-green { background: #f0fdf4; color: #15803d; }
+    .tag-purple { background: #f5f3ff; color: #6d28d9; }
+    .tool-footer {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    /* === CASE STUDY CARDS === */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .case-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.75rem;
+      background: white;
+      display: flex;
+      flex-direction: column;
+    }
+    .case-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #64748b;
+      margin-bottom: 0.55rem;
+      font-weight: 500;
+    }
+    .case-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+      line-height: 1.35;
+    }
+    .key-finding {
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      padding: 0.75rem 1rem;
+      font-size: 0.825rem;
+      color: #78350f;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 1rem;
+      line-height: 1.55;
+    }
+    .case-card p {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .risk-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .risk-high {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: #fef2f2;
+      color: #dc2626;
+      font-weight: 500;
+    }
+    .risk-med {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: #fff7ed;
+      color: #c2410c;
+      font-weight: 500;
+    }
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: #f5f3ff;
+      color: #6d28d9;
+      font-weight: 500;
+      margin-top: 0.75rem;
+      width: fit-content;
+    }
+
+    /* === REGULATORY NOTES === */
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .reg-panel {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .reg-panel h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .scan-date {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 1.4rem;
+    }
+    .scan-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.875rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+    .scan-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .scan-item strong { color: #0f172a; }
+    .sub-desc {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 1.25rem;
+    }
+    /* Substack embed container — replace contents with your iframe embed code */
+    .substack-embed {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .substack-embed p {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+    .substack-embed a {
+      font-size: 0.875rem;
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .substack-embed a:hover { text-decoration: underline; }
+
+    /* === CONTACT === */
+    #contact {
+      background: #0c1829;
+      text-align: center;
+      padding: 5.5rem 2rem;
+    }
+    #contact .eyebrow { color: #60a5fa; margin-bottom: 0.5rem; }
+    #contact h2 {
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    #contact > .section-inner > p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      border: 1px solid #1e3a5f;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .contact-link:hover {
+      border-color: #3b82f6;
+      color: white;
+      background: rgba(59,130,246,0.08);
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: #060e1c;
+      color: #334155;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .reg-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      #hero { padding: 4rem 1.5rem 3.5rem; }
+      #hero h1 { font-size: 2.1rem; }
+      .hero-role { font-size: 1rem; }
+      .hero-credentials span + span { border-left: none; }
+      .tool-grid, .case-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────────────── -->
+  <nav>
+    <a class="brand" href="#">Kate Skipton</a>
+    <ul>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#regulatory">Regulatory Notes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ────────────────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="eyebrow">Privacy · AI Governance · Regulatory Affairs</div>
+    <h1>Kate Skipton</h1>
+    <p class="hero-role">Privacy &amp; AI Advisor</p>
+    <div class="hero-credentials">
+      <span>J.D., University of Toronto Faculty of Law</span>
+      <span>M.A., Memorial University of Newfoundland</span>
+      <span>IAPP / CIPP-C Candidate</span>
+    </div>
+    <p class="hero-bio">
+      Six years as Senior Policy Analyst in privacy, AI governance, and regulatory affairs.
+      Now building AI-powered tools that make privacy compliance faster, clearer, and more accessible —
+      for organizations navigating Canadian law and the shifting AI regulatory landscape.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/kateskipton" target="_blank">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/tonHS" target="_blank">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
+    </div>
+  </section>
+
+  <!-- ── TOOLS ───────────────────────────────────────────────────────────── -->
+  <section id="tools" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">AI-Powered Tools</div>
+        <h2>Privacy &amp; Compliance Tools</h2>
+        <p>Built with the Anthropic Claude Agent SDK. Each tool applies Canadian privacy law to real advisory scenarios.</p>
+      </div>
+      <div class="tool-grid">
+
+        <div class="tool-card">
+          <div class="tool-screenshot">
+            <img
+              src="images/privacy-advisor.png"
+              alt="Privacy Rights Advisor — dark-themed chat interface"
+              onerror="this.style.display='none'"
+            >
+          </div>
+          <div class="tool-body">
+            <h3>Privacy Rights Advisor</h3>
+            <p>A conversational AI tool that helps Canadians understand their rights under PIPEDA, Quebec Law 25, and provincial privacy legislation. Provides jurisdiction-aware, plain-language guidance with statutory citations.</p>
+            <div class="tag-row">
+              <span class="tag">Claude Agent SDK</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">PIPEDA</span>
+              <span class="tag">Quebec Law 25</span>
+            </div>
+            <div class="tool-footer">Live demo coming soon &mdash; contact me for details</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-screenshot">
+            <div class="screenshot-placeholder">
+              <div class="placeholder-ui">
+                <div class="placeholder-bar accent"></div>
+                <div class="placeholder-chat">
+                  <div class="placeholder-bubble assistant"></div>
+                  <div class="placeholder-bubble assistant short"></div>
+                  <div class="placeholder-bubble user"></div>
+                  <div class="placeholder-bubble assistant"></div>
+                </div>
+              </div>
+              <div class="placeholder-label">Privacy Q&amp;A interface</div>
+            </div>
+          </div>
+          <div class="tool-body">
+            <h3>Privacy Q&amp;A: Know Your Options</h3>
+            <p>Plain-language privacy rights guidance built for public-facing access. Session-controlled and rate-limited for responsible deployment. Answers questions about data access rights, consent, and privacy complaints across Canadian jurisdictions.</p>
+            <div class="tag-row">
+              <span class="tag">Claude Agent SDK</span>
+              <span class="tag">Python</span>
+              <span class="tag">Rate-limited</span>
+              <span class="tag tag-green">Public-facing</span>
+            </div>
+            <div class="tool-footer">Live demo coming soon &mdash; contact me for details</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-screenshot">
+            <img
+              src="images/pia-tool.png"
+              alt="AI-Assisted PIA Tool workflow diagram"
+              onerror="this.style.display='none'"
+            >
+          </div>
+          <div class="tool-body">
+            <h3>AI-Assisted PIA Tool</h3>
+            <p>An agentic pipeline that generates structured Privacy Impact Assessments against Canadian and US privacy law frameworks — complete with risk scoring, mitigation recommendations, and executive briefings ready for legal review.</p>
+            <div class="tag-row">
+              <span class="tag">Claude Code</span>
+              <span class="tag tag-purple">Multi-agent</span>
+              <span class="tag">PIPEDA</span>
+              <span class="tag">Law 25</span>
+              <span class="tag">PIPA</span>
+            </div>
+            <div class="tool-footer">Live demo coming soon &mdash; contact me for details</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CASE STUDIES ────────────────────────────────────────────────────── -->
+  <section id="case-studies" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">AI-Assisted Work Product</div>
+        <h2>Privacy Impact Assessment Case Studies</h2>
+        <p>Structured PIAs produced using an AI-assisted assessment pipeline, reviewed against Canadian and US statutory frameworks. All scenarios are illustrative; no real client data is used.</p>
+      </div>
+      <div class="case-grid">
+
+        <div class="case-card">
+          <div class="case-type">Retail Loyalty App &nbsp;·&nbsp; PIPEDA · CASL · Quebec Law 25</div>
+          <h3>"The App Can Launch — But Not Like This"</h3>
+          <div class="key-finding">
+            Five issues required fixing before build — including an illegal CASL consent flow and missing vendor data protection terms that needed action before contracts closed.
+          </div>
+          <p>
+            Assessment of a proposed retail loyalty app collecting location, payment history, and behavioural data from hundreds of thousands of daily customers. Identified 14 compliance gaps across federal and Quebec law, prioritized by urgency, with cross-border transfer requirements flagged for the legal team before vendor contracts signed.
+          </p>
+          <div class="risk-tags">
+            <span class="risk-high">CASL violation</span>
+            <span class="risk-high">Cross-border transfers</span>
+            <span class="risk-med">Consent architecture</span>
+            <span class="risk-med">Minor data (Quebec)</span>
+          </div>
+          <div class="ai-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            AI-Assisted &middot; April 2026
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-type">Connected Vehicle Dealership &nbsp;·&nbsp; PIPEDA · Law 25 · BC/AB PIPA</div>
+          <h3>"Foreign Data Flows the Board Didn't Know About"</h3>
+          <div class="key-finding">
+            Risk score 9/9: connected vehicles collecting biometric and location data without customer notice, consent, or vendor contracts — across five provinces and two foreign manufacturers.
+          </div>
+          <p>
+            Board-commissioned PIA covering connected vehicle data flows, biometric locks, used vehicle data practices, and multi-province compliance gaps across ~50,000 annual customers. Recommended a 90-day privacy program rebuild, a technical audit of both vehicle lines, and immediate suspension of Quebec biometric enrolments pending a mandatory CAI analysis.
+          </p>
+          <div class="risk-tags">
+            <span class="risk-high">Biometric data</span>
+            <span class="risk-high">Foreign state access risk</span>
+            <span class="risk-med">Multi-jurisdiction gaps</span>
+            <span class="risk-med">Trade-in vehicle data</span>
+          </div>
+          <div class="ai-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            AI-Assisted &middot; July 2026
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-type">Covert Biometric Surveillance &nbsp;·&nbsp; PIPEDA · Criminal Code · Texas CUBI</div>
+          <h3>"Do Not Proceed"</h3>
+          <div class="key-finding">
+            Criminal Code s. 21 exposure (aiding unlawful confinement) cannot be mitigated by any privacy governance control. This finding stopped the operation.
+          </div>
+          <p>
+            Scope assessment of a proposed covert facial recognition operation in mall corridors spanning Toronto, Ontario and Dallas, Texas. All eight high-risk PIA flags triggered. Identified criminal liability in Canada and statutory violations under Texas CUBI ($25,000 per biometric capture). Operation recommended not to proceed in either jurisdiction in its proposed form.
+          </p>
+          <div class="risk-tags">
+            <span class="risk-high">Criminal Code s. 21</span>
+            <span class="risk-high">Texas CUBI</span>
+            <span class="risk-high">Discriminatory AI error rates</span>
+            <span class="risk-med">Cross-border transfer</span>
+          </div>
+          <div class="ai-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            AI-Assisted &middot; April 2026
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REGULATORY NOTES ────────────────────────────────────────────────── -->
+  <section id="regulatory" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">Ongoing Analysis</div>
+        <h2>Regulatory Notes</h2>
+        <p>Canadian privacy and AI regulatory developments. Scan updated regularly; writing published via Substack.</p>
+      </div>
+      <div class="reg-grid">
+
+        <div class="reg-panel">
+          <h3>Canadian Privacy &amp; AI Regulatory Scan</h3>
+          <div class="scan-date">Last updated: September 2, 2026</div>
+
+          <div class="scan-item">
+            <strong>Federal legislation — no bill tabled:</strong> Bill C-27 (CPPA + AIDA) died on the order paper when Parliament prorogued January 6, 2025. As of August 2026, no replacement federal AI or privacy bill has been tabled.
+          </div>
+          <div class="scan-item">
+            <strong>Split approach confirmed:</strong> Government has signalled AI regulation will be separated from privacy reform. AIDA is unlikely to return in its previous form. AI is currently governed by existing laws of general application and a voluntary code of conduct for advanced generative AI systems.
+          </div>
+          <div class="scan-item">
+            <strong>Privacy statute signalled but pending:</strong> A new privacy statute and companion tribunal bill were signalled in the 2025 federal budget, but neither had been introduced under a confirmed bill number as of May 2026.
+          </div>
+          <div class="scan-item">
+            <strong>Quebec Law 25 in force:</strong> Canada's strictest private-sector privacy law requires mandatory PIAs, cross-border transfer assessments, and carries administrative penalties up to $10M or 2% of worldwide turnover.
+          </div>
+        </div>
+
+        <div class="reg-panel">
+          <h3>Writing &amp; Analysis</h3>
+          <p class="sub-desc">Privacy policy commentary, regulatory briefings, and AI governance analysis.</p>
+          <iframe src="https://ks12231981.substack.com/embed"
+            width="100%" height="320"
+            style="border:none; background:white; border-radius:8px;"
+            frameborder="0" scrolling="no"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Work Together</h2>
+      <p>
+        Available for consulting, advisory conversations, and information interviews
+        on privacy compliance, AI governance, and Canadian regulatory affairs.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.linkedin.com/in/kateskipton" target="_blank">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="contact-link" href="https://github.com/tonHS" target="_blank">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
+  <footer>
+    &copy; 2026 Kate Skipton &nbsp;&middot;&nbsp; Privacy &amp; AI Advisor &nbsp;&middot;&nbsp; Toronto, ON
+  </footer>
+
+</body>
+</html>
